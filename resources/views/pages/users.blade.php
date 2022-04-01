@@ -16,7 +16,7 @@
 
 <div class="container mt-5 text-center">
     <h1>Users Information</h1>
-    <table class="table table-hover table-striped table-info mt-5 ">
+    <table class="table table-hover table-striped mt-5 ">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -32,7 +32,7 @@
         <td>{{$row['id']}}</td>
         <td>{{$row['users_fname']}}</td>
         <td>{{$row['users_lname']}}</td>
-        <td><a href="#" class="btn btn-warning">Edit</a></td>
+        <td><a href="{{ url('/Edit') }}/{{$row['id']}}" class="btn btn-warning">Edit</a></td>
         <td><a href="#" class="btn btn-danger">Delete</a></td>
     </tr>
     </tbody>

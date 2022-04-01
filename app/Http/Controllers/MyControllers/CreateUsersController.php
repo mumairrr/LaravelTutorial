@@ -37,5 +37,31 @@ class CreateUsersController extends Controller
         return view('pages.users', compact('user'));
     }
 
+    public function editUsersInformation($id)
+    {
+        $user = Users::find($id);
+        return view('pages.edit', compact('user'));   
+    }
+    public function updateUserInformation(Request $request)
+    {
+        $this->validate($request,[
+            'first_name' => 'required',
+            'last_name' => 'required'
+        ]);
+        $adds = array(
+            "users_fname" => $request->first_name,
+            "users_lname" => $request->last_name
+        );
+        
+        $success = Users::where("id",$request->hdn_id)->update(
+            $adds
+        );
+        if($success){
+            return redirect('Users')->with('success', 'Data Updated');    
+        }else{
+            return redirect('Edit')->with('fail', 'Oops!');
+        }
+    }
+
     
 }

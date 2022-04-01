@@ -2,7 +2,7 @@
 @section('title','Create Users')
 @section('apptheme')
 
-<div class="container mt-5 text-center">
+<div class="container mt-5 text-center ">
     <h1>Add Users</h1>
     @if(count($errors) > 0)
     <div class="alert alert-danger">

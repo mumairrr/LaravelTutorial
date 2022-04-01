@@ -20,10 +20,15 @@ use App\Http\Controllers\MyControllers\CreateUsersController;
 |
 */
 
+// Pages 
 Route::get('/',[IndexController::class, 'index']);
 Route::get('/Users',[UsersController::class, 'Users']);
 Route::get('/Parcels',[ParcelController::class, 'Parcels']);
 Route::get('/Contact',[ContactController::class, 'Contact']);
+// Users
 Route::get('/CreateUsers',[CreateUsersController::class, 'CreateUsers']);
-Route::get('/Users',[CreateUsersController::class, 'retrieveInformation']);
 Route::post('/submitCreateUsers',[CreateUsersController::class, 'submitCreateUsers']);
+Route::get('/Users',[CreateUsersController::class, 'retrieveInformation']);
+// Edit User Information
+Route::get('/Edit/{id}',[CreateUsersController::class, 'editUsersInformation']);
+Route::post('/updateUserInformation',[CreateUsersController::class, 'updateUserInformation']);
